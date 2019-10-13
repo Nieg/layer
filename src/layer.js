@@ -4,7 +4,7 @@
  @Author：贤心
  @Site：http://layer.layui.com
  @License：MIT
-    
+ @Modifyby Nieg @ 2019-10-12
  */
 
 ;!function(window, undefined){
@@ -12,19 +12,20 @@
 
 var isLayui = window.layui && layui.define, $, win, ready = {
   getPath: function(){
-    var jsPath = document.currentScript ? document.currentScript.src : function(){
-      var js = document.scripts
-      ,last = js.length - 1
-      ,src;
+    var script=document.currentScript ? document.currentScript : function(){
+      var js = document.scripts,
+      last = js.length - 1,
+      curr;
       for(var i = last; i > 0; i--){
         if(js[i].readyState === 'interactive'){
-          src = js[i].src;
+          curr = js[i];
           break;
         }
       }
-      return src || js[last].src;
-    }();
-    return jsPath.substring(0, jsPath.lastIndexOf('/') + 1);
+      return curr || js[last];
+    }(), jsPath = script ? script.src : null;
+    if(script.getAttribute('merge')) return;
+    return jsPath.substring(0, jsPath.lastIndexOf("/") + 1);
   }(),
 
   config: {}, end: {}, minIndex: 0, minLeft: [],
