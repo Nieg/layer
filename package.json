@@ -1,9 +1,9 @@
 {
-  "name": "layui-layer",
+  "name": "layer-src",
   "realname": "layer",
-  "version": "3.1.1",
+  "version": "3.5.1",
   "mobile": "2.0.0",
-  "description": "Web弹层组件",
+  "description": "Web 通用弹出层组件",
   "main": "src/layer.js",
   "license": "MIT",
   "scripts": {
@@ -13,8 +13,6 @@
     "type": "https",
     "url": "git+https://github.com/sentsin/layer.git"
   },
-  "author": "贤心",
-  "homepage": "http://layer.layui.com/",
   "devDependencies": {
     "gulp": "^3.9.0",
     "gulp-minify-css": "^1.2.4",
@@ -31,6 +29,7 @@
   },
   "dependencies": {},
   "keywords": [
+    "layui",
     "layer",
     "dialog",
     "tips",
